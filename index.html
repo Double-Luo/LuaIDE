@@ -8,6 +8,48 @@
     <h1>Hello World!</h1>
     We are using node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    and Electron <script>document.write(process.versions.electron)</script>
+    
   </body>
 </html>
+
+    <!--这里是拖拽文件显示-->
+    <!--<div id="holder">
+      Drag your file here
+    </div>
+    <script>
+      const holder = document.getElementById('holder')
+      holder.ondragover = () => {
+        return false;
+      }
+      holder.ondragleave = holder.ondragend = () => {
+        return false;
+      }
+      holder.ondrop = (e) => {
+        e.preventDefault()
+        for (let f of e.dataTransfer.files) {
+          console.log('File(s) you dragged here: ', f.path)
+        }
+        return false;
+      }
+    </script>-->
+    
+    <!--WebVieW标签 内嵌网页显示
+    <webview id="foo" src="https://www.github.com/" style="display:inline-flex; width:640px; height:480px"></webview>
+    <script>
+      onload = () => {
+        const webview = document.getElementById('foo')
+        const indicator = document.querySelector('.indicator')
+
+        const loadstart = () => {
+          indicator.innerText = 'loading...'
+        }
+
+        const loadstop = () => {
+          indicator.innerText = ''
+        }
+
+        webview.addEventListener('did-start-loading', loadstart)
+        webview.addEventListener('did-stop-loading', loadstop)
+    }
+    </script>-->
